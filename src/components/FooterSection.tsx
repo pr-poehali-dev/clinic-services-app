@@ -70,7 +70,7 @@ export default function FooterSection({ scrollTo }: FooterSectionProps) {
               </div>
               <div className="text-xs tracking-widest text-muted-foreground uppercase mb-3">Телефон</div>
               <div className="font-display text-2xl font-light">+7 (906) 914-30-31</div>
-              <div className="text-xs text-muted-foreground mt-2">Ежедневно с 8:00 до 22:00</div>
+              <div className="text-xs text-muted-foreground mt-2">Круглосуточно</div>
             </div>
             <div className="bg-background p-8">
               <div className="w-10 h-10 flex items-center justify-center bg-secondary mb-6">
