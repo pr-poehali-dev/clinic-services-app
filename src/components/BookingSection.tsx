@@ -3,14 +3,38 @@ import Icon from "@/components/ui/icon";
 
 const CLEANING_TYPES = ["Стандартная", "Генеральная", "После ремонта", "Офисная", "Химчистка"];
 const TIME_SLOTS = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"];
+const SEND_BOOKING_URL = "https://functions.poehali.dev/1e6cbded-e8a5-4b95-b409-61ace50fa172";
 
 export default function BookingSection() {
   const [booking, setBooking] = useState({ type: "", date: "", time: "", name: "", phone: "", address: "" });
   const [bookingDone, setBookingDone] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleBooking = (e: React.FormEvent) => {
+  const handleBooking = async (e: React.FormEvent) => {
     e.preventDefault();
-    setBookingDone(true);
+    setLoading(true);
+    setError("");
+    try {
+      const res = await fetch(SEND_BOOKING_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: booking.name,
+          phone: booking.phone,
+          address: booking.address,
+          date: booking.date,
+          time: booking.time,
+          cleaningTypes: booking.type ? [booking.type] : [],
+        }),
+      });
+      if (!res.ok) throw new Error("Ошибка отправки");
+      setBookingDone(true);
+    } catch {
+      setError("Не удалось отправить заявку. Попробуйте ещё раз.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -130,14 +154,18 @@ export default function BookingSection() {
             </div>
 
             <div className="p-8 flex items-center justify-between gap-4 flex-wrap">
-              <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
-                Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
-              </p>
+              <div>
+                <p className="text-xs text-muted-foreground max-w-sm leading-relaxed">
+                  Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
+                </p>
+                {error && <p className="text-xs text-red-500 mt-2">{error}</p>}
+              </div>
               <button
                 type="submit"
-                className="bg-foreground text-background px-10 py-4 text-sm tracking-widest hover:opacity-80 transition-opacity uppercase"
+                disabled={loading}
+                className="bg-foreground text-background px-10 py-4 text-sm tracking-widest hover:opacity-80 transition-opacity uppercase disabled:opacity-50"
               >
-                Отправить заявку
+                {loading ? "Отправка..." : "Отправить заявку"}
               </button>
             </div>
           </form>
