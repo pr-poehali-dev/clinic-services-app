@@ -77,7 +77,7 @@ export default function FooterSection({ scrollTo }: FooterSectionProps) {
                 <Icon name="Mail" size={18} />
               </div>
               <div className="text-xs tracking-widest text-muted-foreground uppercase mb-3">Email</div>
-              <div className="font-display text-2xl font-light">hello@chisto.ru</div>
+              <div className="font-display text-2xl font-light">F-kasumov@bk.ru</div>
               <div className="text-xs text-muted-foreground mt-2">Ответим в течение часа</div>
             </div>
             <div className="bg-background p-8">
