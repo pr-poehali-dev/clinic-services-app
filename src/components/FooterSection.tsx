@@ -85,7 +85,7 @@ export default function FooterSection({ scrollTo }: FooterSectionProps) {
                 <Icon name="MapPin" size={18} />
               </div>
               <div className="text-xs tracking-widest text-muted-foreground uppercase mb-3">Адрес</div>
-              <div className="font-display text-2xl font-light">Москва</div>
+              <div className="font-display text-2xl font-light">Красноярск</div>
               <div className="text-xs text-muted-foreground mt-2">Работаем по всему городу</div>
             </div>
           </div>
