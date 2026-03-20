@@ -63,7 +63,7 @@ export default function FooterSection({ scrollTo }: FooterSectionProps) {
             <h2 className="font-display text-5xl md:text-6xl font-light">Контакты</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-border">
             <div className="bg-background p-8">
               <div className="w-10 h-10 flex items-center justify-center bg-secondary mb-6">
                 <Icon name="Phone" size={18} />
@@ -88,6 +88,19 @@ export default function FooterSection({ scrollTo }: FooterSectionProps) {
               <div className="font-display text-2xl font-light">г. Красноярск</div>
               <div className="text-xs text-muted-foreground mt-2">ул. 9 Мая, 73 · Работаем круглосуточно</div>
             </div>
+            <a
+              href="https://t.me/PEDESTALL"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-background p-8 hover:bg-secondary transition-colors group"
+            >
+              <div className="w-10 h-10 flex items-center justify-center bg-secondary mb-6 group-hover:bg-background transition-colors">
+                <Icon name="Send" size={18} />
+              </div>
+              <div className="text-xs tracking-widest text-muted-foreground uppercase mb-3">Telegram</div>
+              <div className="font-display text-2xl font-light">@PEDESTALL</div>
+              <div className="text-xs text-muted-foreground mt-2">Напишите нам</div>
+            </a>
           </div>
         </div>
       </section>

@@ -46,6 +46,15 @@ export default function Navbar({ scrollTo }: NavbarProps) {
               {item.label}
             </button>
           ))}
+          <a
+            href="https://t.me/PEDESTALL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            title="Telegram"
+          >
+            <Icon name="Send" size={18} />
+          </a>
         </div>
 
         <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
