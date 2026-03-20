@@ -69,7 +69,7 @@ export default function FooterSection({ scrollTo }: FooterSectionProps) {
                 <Icon name="Phone" size={18} />
               </div>
               <div className="text-xs tracking-widest text-muted-foreground uppercase mb-3">Телефон</div>
-              <div className="font-display text-2xl font-light">+7 (999) 000-00-00</div>
+              <div className="font-display text-2xl font-light">+7 (906) 914-30-31</div>
               <div className="text-xs text-muted-foreground mt-2">Ежедневно с 8:00 до 22:00</div>
             </div>
             <div className="bg-background p-8">
