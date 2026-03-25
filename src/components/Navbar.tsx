@@ -29,7 +29,7 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           onClick={() => handleScroll("hero")}
           className="font-display text-2xl font-light tracking-[0.2em] cursor-pointer select-none"
         >
-          КЛИНИНГ И ГРУЗЧИКИ
+          УСЛУГИ УДОБСТВА
         </button>
 
         <div className="hidden md:flex items-center gap-8">
