@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { HeroSection, ServicesSection, PricesSection, PortfolioSection, ReviewsSection } from "@/components/Sections";
+import { HeroSection, ServicesSection, MoversSection, PricesSection, PortfolioSection, ReviewsSection } from "@/components/Sections";
 import BookingSection from "@/components/BookingSection";
 import FooterSection from "@/components/FooterSection";
 
@@ -13,6 +13,7 @@ export default function Index() {
       <Navbar scrollTo={scrollTo} />
       <HeroSection scrollTo={scrollTo} />
       <ServicesSection />
+      <MoversSection scrollTo={scrollTo} />
       <PricesSection />
       <PortfolioSection />
       <ReviewsSection />

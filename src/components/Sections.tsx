@@ -127,6 +127,54 @@ export function ServicesSection() {
   );
 }
 
+const MOVERS_INCLUDED = [
+  { icon: "Armchair", title: "Разборка и сборка мебели", desc: "Аккуратно разберём и соберём любую мебель на новом месте" },
+  { icon: "Package", title: "Упаковка вещей", desc: "Упакуем хрупкие предметы и бытовую технику" },
+  { icon: "ArrowUpDown", title: "Подъём и спуск на любой этаж", desc: "Работаем с любой высотой, в том числе без лифта" },
+  { icon: "Trash2", title: "Вынос мусора", desc: "Уберём упаковочный материал и ненужные вещи после переезда" },
+];
+
+export function MoversSection({ scrollTo }: SectionsProps) {
+  return (
+    <section id="movers" className="py-24 px-6 md:px-16 bg-foreground text-background">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
+          <div>
+            <p className="text-xs tracking-[0.4em] text-background/50 mb-4 uppercase">Услуга</p>
+            <h2 className="font-display text-5xl md:text-6xl font-light mb-6">Грузчики</h2>
+            <p className="text-background/70 leading-relaxed mb-8">
+              Поможем с переездом, подъёмом мебели и доставкой — быстро и аккуратно. Работаем с квартирами, офисами и дачами. Команда опытных грузчиков справится с любым объёмом.
+            </p>
+            <div className="flex items-end gap-3 mb-8">
+              <span className="font-display text-5xl font-light">от 400 ₽</span>
+              <span className="text-background/50 mb-2">/час</span>
+            </div>
+            <button
+              onClick={() => scrollTo("booking")}
+              className="border border-background/30 text-background px-8 py-4 text-sm tracking-widest hover:bg-background hover:text-foreground transition-colors uppercase"
+            >
+              Заказать грузчиков
+            </button>
+          </div>
+          <div className="grid grid-cols-1 gap-px bg-background/10">
+            {MOVERS_INCLUDED.map((item, i) => (
+              <div key={i} className="p-6 flex gap-5 items-start">
+                <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-background/10">
+                  <Icon name={item.icon} fallback="Check" size={18} />
+                </div>
+                <div>
+                  <div className="font-display text-lg font-light mb-1">{item.title}</div>
+                  <div className="text-background/50 text-sm leading-relaxed">{item.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function PricesSection() {
   return (
     <section id="prices" className="py-24 px-6 md:px-16 bg-secondary">
