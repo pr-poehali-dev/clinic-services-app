@@ -20,9 +20,9 @@ const PRICES = [
 ];
 
 const PORTFOLIO = [
-  { room: "Кухня", label: "Генеральная уборка" },
-  { room: "Ванная", label: "Глубокая чистка" },
-  { room: "Гостиная", label: "После ремонта" },
+  { room: "Кухня", label: "Генеральная уборка", img: "https://cdn.poehali.dev/projects/70e4595c-2493-4c8e-947e-d2ed1ec49759/files/9dee63f0-7e2b-48c4-9983-52f117ee27d2.jpg" },
+  { room: "Ванная", label: "Глубокая чистка", img: "https://cdn.poehali.dev/projects/70e4595c-2493-4c8e-947e-d2ed1ec49759/files/c85a54fb-56d7-490c-9b6e-ccab6c48402c.jpg" },
+  { room: "Гостиная", label: "После ремонта", img: "https://cdn.poehali.dev/projects/70e4595c-2493-4c8e-947e-d2ed1ec49759/files/71e19886-12c7-4674-b057-f20d00fd2943.jpg" },
 ];
 
 const REVIEWS = [
@@ -229,26 +229,12 @@ export function PortfolioSection() {
           {PORTFOLIO.map((p, i) => (
             <div key={i} className="bg-background overflow-hidden group">
               <div className="relative h-72 overflow-hidden">
-                <div className="absolute inset-0 flex">
-                  <div
-                    className="flex-1 flex items-end p-4"
-                    style={{ backgroundColor: BEFORE_AFTER_COLORS[i].before }}
-                  >
-                    <span className="text-xs tracking-widest text-white/90 uppercase bg-black/20 px-2 py-1">До</span>
-                  </div>
-                  <div className="w-px bg-white/60 relative z-10" />
-                  <div
-                    className="flex-1 flex items-end p-4"
-                    style={{ backgroundColor: BEFORE_AFTER_COLORS[i].after }}
-                  >
-                    <span className="text-xs tracking-widest text-foreground/50 uppercase bg-black/5 px-2 py-1">После</span>
-                  </div>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="w-8 h-8 bg-white flex items-center justify-center shadow-sm z-20">
-                    <Icon name="ArrowLeftRight" size={14} />
-                  </div>
-                </div>
+                <img
+                  src={p.img}
+                  alt={p.room}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-foreground/20 group-hover:bg-foreground/10 transition-colors" />
               </div>
               <div className="p-5 border-t border-border">
                 <div className="font-display text-lg font-light">{p.room}</div>
