@@ -58,7 +58,7 @@ export function HeroSection({ scrollTo }: SectionsProps) {
           <span className="italic">без усилий</span>
         </h1>
         <p className="text-muted-foreground max-w-md leading-relaxed mb-10 text-base">
-          Доверьте уборку профессионалам. Мы создаём безупречную чистоту в вашем доме или офисе — быстро, аккуратно и надёжно.
+          Доверьте уборку профессионалам. Мы создаём безупречную чистоту в вашем доме или офисе — быстро, аккуратно и надёжно. А ещё поможем с переездом: наши грузчики аккуратно перевезут мебель и вещи в любую точку города.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <button
