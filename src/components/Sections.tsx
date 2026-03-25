@@ -54,8 +54,9 @@ export function HeroSection({ scrollTo }: SectionsProps) {
       <div className="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 animate-fade-in">
         <p className="text-xs tracking-[0.4em] text-muted-foreground mb-6 uppercase">Профессиональный клининг</p>
         <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-light leading-none mb-8 text-foreground">
-          Чистота<br />
-          <span className="italic">без усилий</span>
+          Быстро.<br />
+          <span className="italic">Удобно.</span><br />
+          Качественно.
         </h1>
         <p className="text-muted-foreground max-w-md leading-relaxed mb-10 text-base">
           Доверьте уборку профессионалам. Мы создаём безупречную чистоту в вашем доме или офисе — быстро, аккуратно и надёжно. А ещё поможем с переездом: наши грузчики аккуратно перевезут мебель и вещи в любую точку города.
