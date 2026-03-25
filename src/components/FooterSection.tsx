@@ -31,7 +31,7 @@ export default function FooterSection({ scrollTo }: FooterSectionProps) {
               <p className="text-xs tracking-[0.4em] text-background/50 mb-4 uppercase">Кто мы</p>
               <h2 className="font-display text-5xl md:text-6xl font-light mb-8">О нас</h2>
               <p className="text-background/70 leading-relaxed mb-6">
-                ЧИСТО — команда профессиональных клинеров с опытом более 5 лет. Мы используем только сертифицированную химию, которая безопасна для детей и домашних животных.
+                КЛИНИНГ И ГРУЗЧИКИ — команда профессиональных клинеров с опытом более 5 лет. Мы используем только сертифицированную химию, которая безопасна для детей и домашних животных.
               </p>
               <p className="text-background/70 leading-relaxed mb-10">
                 Каждый специалист проходит строгий отбор, обучение и регулярную аттестацию. Мы несём материальную ответственность за сохранность вашего имущества.
@@ -108,8 +108,8 @@ export default function FooterSection({ scrollTo }: FooterSectionProps) {
       {/* FOOTER */}
       <footer className="py-8 px-6 md:px-16 border-t border-border">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="font-display text-xl font-light tracking-[0.2em]">ЧИСТО</div>
-          <div className="text-xs text-muted-foreground tracking-wide">© 2026 ЧИСТО. Все права защищены.</div>
+          <div className="font-display text-xl font-light tracking-[0.2em]">КЛИНИНГ И ГРУЗЧИКИ</div>
+          <div className="text-xs text-muted-foreground tracking-wide">© 2026 КЛИНИНГ И ГРУЗЧИКИ. Все права защищены.</div>
           <div className="flex flex-wrap gap-6 justify-center">
             {NAV_ITEMS.map((item) => (
               <button
