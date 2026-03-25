@@ -52,7 +52,6 @@ export function HeroSection({ scrollTo }: SectionsProps) {
   return (
     <section id="hero" className="min-h-screen flex flex-col md:flex-row pt-16">
       <div className="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 py-20 animate-fade-in">
-        <p className="text-xs tracking-[0.4em] text-muted-foreground mb-6 uppercase">Профессиональный клининг</p>
         <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-light leading-none mb-8 text-foreground">
           Быстро.<br />
           <span className="italic">Удобно.</span><br />
