@@ -6,7 +6,14 @@ const TIME_SLOTS = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00
 const SEND_BOOKING_URL = "https://functions.poehali.dev/1e6cbded-e8a5-4b95-b409-61ace50fa172";
 
 export default function BookingSection() {
-  const [booking, setBooking] = useState({ type: "", date: "", time: "", name: "", phone: "", address: "" });
+  const [booking, setBooking] = useState({ types: [] as string[], date: "", time: "", name: "", phone: "", address: "" });
+
+  const toggleType = (t: string) => {
+    setBooking((prev) => ({
+      ...prev,
+      types: prev.types.includes(t) ? prev.types.filter((x) => x !== t) : [...prev.types, t],
+    }));
+  };
   const [bookingDone, setBookingDone] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -25,7 +32,7 @@ export default function BookingSection() {
           address: booking.address,
           date: booking.date,
           time: booking.time,
-          cleaningTypes: booking.type ? [booking.type] : [],
+          cleaningTypes: booking.types,
         }),
       });
       if (!res.ok) throw new Error("Ошибка отправки");
@@ -71,9 +78,9 @@ export default function BookingSection() {
                     <button
                       type="button"
                       key={t}
-                      onClick={() => setBooking({ ...booking, type: t })}
+                      onClick={() => toggleType(t)}
                       className={`px-5 py-2.5 text-sm tracking-wide transition-colors border ${
-                        booking.type === t
+                        booking.types.includes(t)
                           ? "bg-foreground text-background border-foreground"
                           : "border-border hover:border-foreground"
                       }`}
